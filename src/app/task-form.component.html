@@ -2,7 +2,7 @@
     <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
         <div class="form-group">
             <div class="form-control" name="name" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)">
-                {{ task.id }}) {{ task.name }}
+                {{ task.id }}) {{ task.name }} ({{ task.estimate }} hrs)
             </div>
 
             <div class="form-statuses">

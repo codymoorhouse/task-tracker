@@ -39,7 +39,6 @@ export class TaskFormComponent {
   }
 
   saveTask(event) {
-    console.log('test');
     alert('Saved!');
   }
 
