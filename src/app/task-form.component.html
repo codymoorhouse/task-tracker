@@ -1,0 +1,14 @@
+<div id="taskForm">
+    <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
+        <div class="form-group">
+            <div class="form-control" name="name">
+                {{ task.name }}
+            </div>
+        </div>
+        <button type="submit" [disabled]="!taskForm.form.valid">Submit</button>
+    </form>
+    <div [hidden]="!taskForm.form.valid">
+        {{submitMessage}}
+    </div>
+</div>
+    
