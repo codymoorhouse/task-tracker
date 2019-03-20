@@ -1,14 +1,17 @@
 <div id="taskForm">
     <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
         <div class="form-group">
-            <div class="form-control" name="name">
-                {{ task.name }}
+            <div class="form-control" name="name" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)">
+                {{ task.id }}) {{ task.name }} - {{ task.getStatusLabel() }}
+            </div>
+
+            <div class="form-tooltip" *ngIf="showTooltip">
+                {{ task.description }}
             </div>
         </div>
-        <button type="submit" [disabled]="!taskForm.form.valid">Submit</button>
     </form>
     <div [hidden]="!taskForm.form.valid">
-        {{submitMessage}}
+        {{ submitMessage }}
     </div>
 </div>
     

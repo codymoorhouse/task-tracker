@@ -24,19 +24,14 @@ export class Task {
         public name?: string,
         public description?: string,
         public estimate?: number,
+        public status = 'planned'
         ) {
         this.id = id ? id : Task.nextId++;
         this.status = 'planned';
       }
 
-      getStatusLabel(): String {
+      getStatusLabel(): string {
           return this.statusesMap[this.status];
-      }
-
-      set status(status: string) {
-        if (this.statuses.includes(status)) {
-            this.status = 'status';
-        }
       }
 
       clone(): Task {
