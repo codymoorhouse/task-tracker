@@ -2,12 +2,23 @@
     <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
         <div class="form-group">
             <div class="form-control" name="name" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)">
-                {{ task.id }}) {{ task.name }} - {{ task.getStatusLabel() }}
+                {{ task.id }}) {{ task.name }}
             </div>
 
-            <div class="form-tooltip" *ngIf="showTooltip">
-                {{ task.description }}
+            <div class="form-statuses">
+                <select class="form-status" name="status" [ngModel]="task.status" (ngChange)="saveTask($event)">
+                    <option disabled>
+                        Select...
+                    </option>
+                    <option value="{{status}}" *ngFor="let status of availableStatuses">
+                        {{ getStatusLabel(status) }}
+                    </option>
+                </select>
             </div>
+        </div>
+
+        <div class="form-tooltip" *ngIf="showTooltip">
+            {{ task.description }}
         </div>
     </form>
     <div [hidden]="!taskForm.form.valid">

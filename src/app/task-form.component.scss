@@ -1,3 +1,25 @@
 #taskForm {
-    
+    .form-group {
+        display: flex;
+
+        .form-control {
+            flex: .5;
+        }
+
+        .form-statuses {
+            flex: .5;
+            display: flex;
+
+            .form-status {
+                display: flex;
+                flex: .33;
+                justify-content: center;
+                color: #EEE;
+
+                &.selected {
+                    color: #444;
+                }
+            }
+        }
+    }
 }

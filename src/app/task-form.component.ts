@@ -26,8 +26,21 @@ export class TaskFormComponent {
     return this._submitMessage;
   }
 
+  get availableStatuses(): String[] {
+    return Task.statuses;
+  }
+
+  getStatusLabel(status): String {
+    return Task.getStatusLabel(status);
+  }
+
   onSubmit(form: NgForm) {
     this._submitMessage =  'Submitted. form value is ' + JSON.stringify(form.value);
+  }
+
+  saveTask(event) {
+    console.log('test');
+    alert('Saved!');
   }
 
   mouseEnter(event) {
