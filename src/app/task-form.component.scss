@@ -1,14 +1,17 @@
 #taskForm {
     .form-group {
         display: flex;
+        padding: 10px 0;
 
         .form-control {
             flex: .5;
+            justify-content: flex-start;
         }
 
         .form-statuses {
             flex: .5;
             display: flex;
+            justify-content: flex-end;
 
             .form-status {
                 display: flex;
