@@ -9,6 +9,12 @@
   <app-task-form *ngFor="let task of tasks"
     [task]="task">
   </app-task-form>
+
+  <div class="divider"></div>
+
+  <div>
+    Total Estimate: ({{ getEstimateTotal() }} hrs)
+  </div>
 </div>
 
 <router-outlet></router-outlet>

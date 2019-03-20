@@ -18,4 +18,10 @@ export class AppComponent {
   setTasks() {
     this.tasks = Task.tasks.map(task => task.clone());
   }
+
+  getEstimateTotal() {
+    return this.tasks.reduce((acc, task) => {
+      return acc + task.estimate;
+    }, 0);
+  }
 }
