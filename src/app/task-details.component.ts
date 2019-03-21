@@ -30,7 +30,8 @@ export class TaskDetailsComponent {
   }
 
   saveTask(event) {
-    alert('Saved!');
+    this.task.status = event.target.value;
+    alert('[POST TO SERVER]');
   }
 
   mouseEnter(event) {

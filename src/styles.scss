@@ -4,9 +4,9 @@ $secondary-color: #EFF1C5;
 $tertiary-color: #002E2C;
 
 $default-font-color: $tertiary-color;
+$default-font-family: 'Comic Sans MS', 'Comic Sans', 'serif';
 
 $panel-bg-color: #A2A77F;
-
 $btn-bg: #035E7B;
 $btn-font-color: #E3E3E3;
 
@@ -21,6 +21,11 @@ h1 {
 body {
   background: $primary-color;
   color: $default-font-color;
+  font-family: $default-font-family;
+}
+
+select, option, button {
+  font-family: $default-font-family;
 }
 
 .panel {
@@ -28,7 +33,8 @@ body {
   margin: auto;
   max-width: 800px;
   padding: 15px;
-
+  border-radius: 15px;
+  
   .panel-header, .panel-footer {
     text-align: right;
   }

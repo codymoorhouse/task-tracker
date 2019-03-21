@@ -7,7 +7,7 @@
         </div>
 
         <div class="task-statuses">
-            <select class="task-status" name="status" [ngModel]="task.status" (ngChange)="saveTask($event)">
+            <select class="task-status" name="status" [ngModel]="task.status" (change)="saveTask($event)">
                 <option disabled>
                     Select...
                 </option>
