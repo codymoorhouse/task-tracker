@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import { Task } from './task';
-import { TaskDetailsComponent } from './task-details.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,15 +9,7 @@ import { TaskDetailsComponent } from './task-details.component';
 
 export class AppComponent {
   title = 'Task Tracker';
-  tasks: Task[];
-
-  ngOnInit() {
-    this.setTasks();
-  }
-
-  setTasks() {
-    this.tasks = Task.tasks.map(task => task.clone());
-  }
+  tasks: Task[] = Task.tasks;
 
   getTimeEstimate(status: string) {
     if (status == 'all') {
@@ -30,19 +21,10 @@ export class AppComponent {
   }
 
   deleteTask(taskId: number) {
-    /* Remove Element */
-    let idx = this.tasks.findIndex(t => t.id == taskId);
-    this.tasks.splice(idx, 1);
-
-    /* Reorder tasks */
-    this.updateTaskIds();
+    Task.remove(taskId);
   }
 
   addTask(task: Task) {
-    this.tasks.push(task);
-  }
-
-  updateTaskIds() {
-    this.tasks.forEach((t, idx) => t.id = idx + 1); 
+    Task.add(task);
   }
 }

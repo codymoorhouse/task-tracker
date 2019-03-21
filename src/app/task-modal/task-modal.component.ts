@@ -29,7 +29,7 @@ export class TaskModalComponent implements OnInit {
 
   add() {
     if (this.isValidTask()) {
-      this.added.emit(new Task(4, this.name, this.description, this.estimate));
+      this.added.emit(new Task(this.name, this.description, this.estimate));
       this.closed.emit(true);
     } else {
       this.setErrors();
