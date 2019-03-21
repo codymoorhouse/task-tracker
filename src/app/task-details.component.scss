@@ -1,17 +1,26 @@
+@import '../styles.scss';
+
 #task-details {
-    .form-group {
+    position: relative;
+
+    .task-group {
         display: flex;
         padding: 10px 0;
 
-        .form-control {
+        .task-control {
             flex: .5;
             justify-content: flex-start;
             align-content: center;
             vertical-align: middle;
             align-items: center;
+
+            .task-info {
+                cursor: pointer;
+                display: inline-block;
+            }
         }
 
-        .form-statuses {
+        .task-statuses {
             flex: .5;
             display: flex;
             justify-content: flex-end;
@@ -20,5 +29,16 @@
             align-items: center;
             margin-right: 15px;
         }
+    }
+
+    .task-tooltip {
+        background: $tooltip-bg;
+        padding: 5px;
+        position: absolute;
+        top: -20px;
+        z-index: 999;
+        left: 10px;
+        border-radius: 15px;
+        color: $tooltip-font-color;
     }
 }

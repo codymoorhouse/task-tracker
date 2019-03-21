@@ -3,12 +3,15 @@ $primary-color: #E3E7AF;
 $secondary-color: #EFF1C5;
 $tertiary-color: #002E2C;
 
-$default-font-color: #002E2C;
+$default-font-color: $tertiary-color;
 
 $panel-bg-color: #A2A77F;
 
 $btn-bg: #035E7B;
 $btn-font-color: #E3E3E3;
+
+$tooltip-bg: $tertiary-color;
+$tooltip-font-color: #E3E3E3;
 
 h1 {
   font-family: Arial, Helvetica, sans-serif;
@@ -21,26 +24,46 @@ body {
 }
 
 .panel {
-    background: $panel-bg-color;
-    margin: auto;
-    max-width: 800px;
-    padding: 15px;
+  background: $panel-bg-color;
+  margin: auto;
+  max-width: 800px;
+  padding: 15px;
 
-    .panel-header {
-      text-align: right;
+  .panel-header, .panel-footer {
+    text-align: right;
+  }
+
+  .time-wrapper {
+    display: flex;
+
+    .time-label {
+      display: flex;
+      flex: .9;
+      justify-content: flex-end;
     }
+
+    .time-estimate {
+      display: flex;
+      flex: .1;
+      justify-content: flex-end;
+    }
+  }
 }
 
 .divider {
   margin: 10px 0;
-  background: #3e3e3e;
+  background: $tertiary-color;
   height: 1px;
 }
 
 .btn {
+  cursor: pointer;
   background: $btn-bg;
   color: $btn-font-color;
   padding: 10px;
   border-radius: 15px;
-  cursor: pointer;
+  
+
+  outline: none;
+  box-shadow: none;
 }

@@ -20,17 +20,40 @@
   <div class="divider"></div>
 
   <div class="panel-footer">
-    <div>
-      Planned Tasks: {{ getTimeEstimate('planned') }} hrs
+    <div class="time-wrapper">
+      <div class="time-label">
+          Planned Tasks: 
+      </div>
+      <div class="time-estimate">
+          {{ getTimeEstimate('planned') }} hrs
+      </div>
     </div>
-    <div>
-      In Progress Tasks: {{ getTimeEstimate('in-progress') }} hrs
+    <div class="time-wrapper">
+      <div class="time-label">
+          In Progress Tasks: 
+      </div>
+      <div class="time-estimate">
+          {{ getTimeEstimate('in-progress') }} hrs
+      </div>
     </div>
-    <div>
-      Completed Tasks: {{ getTimeEstimate('completed') }} hrs
+    <div class="time-wrapper">
+      <div class="time-label">
+          Completed Tasks: 
+      </div>
+      <div class="time-estimate">
+          {{ getTimeEstimate('completed') }} hrs
+      </div>
     </div>
-    <div>
-      Total Estimate: {{ getTimeEstimate('all') }} hrs
+
+    <div class="divider"></div>
+
+    <div class="time-wrapper">
+      <div class="time-label">
+          Total Estimate: 
+      </div>
+      <div class="time-estimate">
+          {{ getTimeEstimate('all') }} hrs
+      </div>
     </div>
   </div>
 </div>

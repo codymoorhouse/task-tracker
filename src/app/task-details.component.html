@@ -1,11 +1,13 @@
 <div id="task-details">
-    <div class="form-group">
-        <div class="form-control" name="name" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)">
-            {{ task.id }}) {{ task.name }} ({{ task.estimate }} hrs)
+    <div class="task-group">
+        <div class="task-control">
+            <div class="task-info" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)">
+                {{ task.id }}) {{ task.name }} ({{ task.estimate }} hrs)
+            </div>
         </div>
 
-        <div class="form-statuses">
-            <select class="form-status" name="status" [ngModel]="task.status" (ngChange)="saveTask($event)">
+        <div class="task-statuses">
+            <select class="task-status" name="status" [ngModel]="task.status" (ngChange)="saveTask($event)">
                 <option disabled>
                     Select...
                 </option>
@@ -20,7 +22,7 @@
         </button>
     </div>
 
-    <div class="form-tooltip" *ngIf="showTooltip">
+    <div class="task-tooltip" *ngIf="showTooltip">
         {{ task.description }}
     </div>
 </div>
