@@ -1,29 +1,19 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import { NgForm }                      from '@angular/forms';
 
 import { Task } from './task';
 
 @Component({
-  selector: 'app-task-form',
-  templateUrl: './task-form.component.html',
-  styleUrls: ['./task-form.component.scss']
+  selector: 'app-task-details',
+  templateUrl: './task-details.component.html',
+  styleUrls: ['./task-details.component.scss']
 })
-export class TaskFormComponent {
+export class TaskDetailsComponent {
   @Input() task: Task;
-  @ViewChild('taskForm') form: NgForm;
 
-  private _submitMessage = '';
   private _showTooltip = false;
 
   get showTooltip() {
       return this._showTooltip;
-  }
-
-  get submitMessage() {
-    if (!this.form.valid) {
-      this._submitMessage = '';
-    }
-    return this._submitMessage;
   }
 
   get availableStatuses(): String[] {
@@ -32,10 +22,6 @@ export class TaskFormComponent {
 
   getStatusLabel(status): String {
     return Task.getStatusLabel(status);
-  }
-
-  onSubmit(form: NgForm) {
-    this._submitMessage =  'Submitted. form value is ' + JSON.stringify(form.value);
   }
 
   saveTask(event) {

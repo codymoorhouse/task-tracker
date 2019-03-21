@@ -1,0 +1,27 @@
+<div id="task-details">
+    <div class="form-group">
+        <div class="form-control" name="name" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)">
+            {{ task.id }}) {{ task.name }} ({{ task.estimate }} hrs)
+        </div>
+
+        <div class="form-statuses">
+            <select class="form-status" name="status" [ngModel]="task.status" (ngChange)="saveTask($event)">
+                <option disabled>
+                    Select...
+                </option>
+                <option value="{{status}}" *ngFor="let status of availableStatuses">
+                    {{ getStatusLabel(status) }}
+                </option>
+            </select>
+        </div>
+
+        <button (click)="deleteTask">
+            X
+        </button>
+    </div>
+
+    <div class="form-tooltip" *ngIf="showTooltip">
+        {{ task.description }}
+    </div>
+</div>
+    

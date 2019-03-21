@@ -24,4 +24,8 @@ export class AppComponent {
       return acc + task.estimate;
     }, 0);
   }
+
+  removeTask(idx) {
+    this.tasks.splice(idx, 1);
+  }
 }
