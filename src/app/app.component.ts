@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Task } from './task';
+import { Task } from './tasks/task';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,7 +8,7 @@ import { Task } from './task';
 })
 
 export class AppComponent {
-  title = 'Task Tracker';
+  title = "Task Tracker";
   tasks: Task[] = Task.tasks;
 
   getTimeEstimate(status: string) {
