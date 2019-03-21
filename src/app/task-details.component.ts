@@ -39,6 +39,8 @@ export class TaskDetailsComponent {
   }
   
   mouseLeave(event) {
-    this._showTooltip = false;
+    if (event.toElement.className != 'task-tooltip') {
+      this._showTooltip = false;
+    }
   }
 }

@@ -22,7 +22,7 @@
         </button>
     </div>
 
-    <div class="task-tooltip" *ngIf="showTooltip">
+    <div class="task-tooltip" *ngIf="showTooltip" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)">
         {{ task.description }}
     </div>
 </div>
