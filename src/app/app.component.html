@@ -6,6 +6,12 @@
 </div>
 
 <div class="panel">
+  <div class="panel-header">
+    <button class="btn">
+      Add Task +
+    </button>
+  </div>
+
   <app-task-details *ngFor="let task of tasks"
     [task]="task"
     (deleted)="deleteTask($event)">

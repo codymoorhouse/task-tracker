@@ -6,23 +6,19 @@
         .form-control {
             flex: .5;
             justify-content: flex-start;
+            align-content: center;
+            vertical-align: middle;
+            align-items: center;
         }
 
         .form-statuses {
             flex: .5;
             display: flex;
             justify-content: flex-end;
-
-            .form-status {
-                display: flex;
-                flex: .33;
-                justify-content: center;
-                color: #EEE;
-
-                &.selected {
-                    color: #444;
-                }
-            }
+            align-content: center;
+            vertical-align: middle;
+            align-items: center;
+            margin-right: 15px;
         }
     }
 }

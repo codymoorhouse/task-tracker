@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+$primary-color: #E3E7AF;
+$secondary-color: #EFF1C5;
+$tertiary-color: #002E2C;
+
+$default-font-color: #002E2C;
+
+$panel-bg-color: #A2A77F;
+
+$btn-bg: #035E7B;
+$btn-font-color: #E3E3E3;
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+body {
+  background: $primary-color;
+  color: $default-font-color;
+}
+
+.panel {
+    background: $panel-bg-color;
+    margin: auto;
+    max-width: 800px;
+    padding: 15px;
+
+    .panel-header {
+      text-align: right;
+    }
+}
+
+.divider {
+  margin: 10px 0;
+  background: #3e3e3e;
+  height: 1px;
+}
+
+.btn {
+  background: $btn-bg;
+  color: $btn-font-color;
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+}
