@@ -29,6 +29,7 @@ export class TaskModalComponent implements OnInit {
 
   add() {
     if (this.isValidTask()) {
+      alert('TODO: POST TO SERVER');
       this.added.emit(new Task(this.name, this.description, this.estimate));
       this.closed.emit(true);
     } else {
@@ -37,16 +38,15 @@ export class TaskModalComponent implements OnInit {
   }
 
   isValidTask() {
-    return this.name && this.description && this.estimate;
+    return this.name && this.estimate;
   }
 
   hasErrors() {
-    return this.errors.name || this.errors.description && this.errors.estimate;
+    return this.errors.name || this.errors.estimate;
   }
 
   setErrors() {
     this.errors.name = !this.name ? 'A name must be specified' : null;
-    this.errors.description = !this.description ? 'The description must be specified' : null;
     this.errors.estimate = !this.estimate ? 'A valid estimate must be specified.' : null;
   }
 

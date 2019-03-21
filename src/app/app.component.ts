@@ -22,6 +22,7 @@ export class AppComponent {
 
   deleteTask(taskId: number) {
     Task.remove(taskId);
+    alert('TODO: DELETE FROM SERVER');
   }
 
   addTask(task: Task) {

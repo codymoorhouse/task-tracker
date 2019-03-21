@@ -29,9 +29,9 @@ export class TaskDetailsComponent {
     return Task.getStatusLabel(status);
   }
 
-  saveTask(event) {
+  updateTaskStatus(event) {
     this.task.status = event.target.value;
-    alert('[POST TO SERVER]');
+    alert('TODO: PATCH TO SERVER');
   }
 
   mouseEnter(event) {

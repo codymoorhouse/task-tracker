@@ -7,7 +7,7 @@
         </div>
 
         <div class="task-statuses">
-            <select class="task-status" name="status" [ngModel]="task.status" (change)="saveTask($event)">
+            <select class="task-status" name="status" [ngModel]="task.status" (change)="updateTaskStatus($event)">
                 <option disabled>
                     Select...
                 </option>
@@ -23,7 +23,7 @@
     </div>
 
     <div class="task-tooltip" *ngIf="showTooltip" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)">
-        {{ task.description }}
+        {{ task.description || 'No description available...' }}
     </div>
 </div>
     
