@@ -7,12 +7,14 @@ $default-font-color: $tertiary-color;
 $default-font-family: 'Comic Sans MS', 'Comic Sans', 'serif';
 
 $panel-bg-color: #A2A77F;
+$modal-bg-color: $panel-bg-color;
+
 $btn-bg: #035E7B;
 $btn-font-color: #E3E3E3;
 
 $tooltip-bg: $tertiary-color;
 $tooltip-font-color: #E3E3E3;
-
+w
 h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
@@ -34,11 +36,24 @@ input, textarea {
   padding: 10px;
   margin: 5px 0px 10px 0;
   box-sizing: border-box;
+  border: solid thin black;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 textarea {
   resize: none;
   min-height: 100px;
+}
+
+.w-auto { 
+  width: auto;
+}
+
+.inline {
+  display: inline;
 }
 
 .panel {

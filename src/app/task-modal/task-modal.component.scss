@@ -1,3 +1,5 @@
+@import '../../styles';
+
 .task-modal {
     position: absolute;
     background: rgba(0, 0, 0, 0.7);
@@ -7,11 +9,15 @@
     left: 0;
 
     .task-modal-content {
-        background: green;
+        background: $modal-bg-color;
         margin: auto;
         padding: 15px;
         width: 60%;
-        height: 60%;
         margin-top: 10%;
+        border-radius: 15px;
+    }
+
+    .task-modal-footer {
+        text-align: right;
     }
 }

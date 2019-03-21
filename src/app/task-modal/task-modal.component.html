@@ -8,7 +8,11 @@
       <label for="description">Description:</label>
       <textarea class="form-control" name="description" id="description" [(ngModel)]="task.description"></textarea>
     </div>
-    <div>
+    <div class="task-modal-footer">
+      <div class="form-group">
+        <label for="estimate">Estimate (hrs):</label>
+        <input type="number" class="form-control w-auto inline" name="estimate" id="estimate" [(ngModel)]="task.estimate">
+      </div>
       <button class="btn" (click)="add()">
         Add Task
       </button>
