@@ -38,6 +38,10 @@ export class AppComponent {
     this.updateTaskIds();
   }
 
+  addTask(task: Task) {
+    this.tasks.push(task);
+  }
+
   updateTaskIds() {
     this.tasks.forEach((t, idx) => t.id = idx + 1); 
   }

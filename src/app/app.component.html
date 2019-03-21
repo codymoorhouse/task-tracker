@@ -7,7 +7,7 @@
 
 <div class="panel">
   <div class="panel-header">
-    <button class="btn">
+    <button class="btn" (click)="showForm = true">
       Add Task +
     </button>
   </div>
@@ -56,6 +56,10 @@
       </div>
     </div>
   </div>
+
+  <app-task-modal *ngIf="showForm" (added)="addTask($event)">
+
+  </app-task-modal>
 </div>
 
 <router-outlet></router-outlet>

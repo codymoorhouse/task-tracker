@@ -6,10 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { TaskDetailsComponent } from './task-details.component';
+import { TaskModalComponent } from './task-modal/task-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TaskDetailsComponent
+    TaskDetailsComponent,
+    TaskModalComponent
   ],
   imports: [
     BrowserModule,
