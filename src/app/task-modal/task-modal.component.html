@@ -1,8 +1,17 @@
-<div class="task-modal">
-
-  task-form works!
-
-  <button (click)="add()">
-    Add Task
-  </button>
+<div class="task-modal" id="task-modal-wrapper" (click)="close($event)">
+  <div class="task-modal-content">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input class="form-control" name="name" id="name" [(ngModel)]="task.name">
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea class="form-control" name="description" id="description" [(ngModel)]="task.description"></textarea>
+    </div>
+    <div>
+      <button class="btn" (click)="add()">
+        Add Task
+      </button>
+    </div>
+  </div>
 </div>

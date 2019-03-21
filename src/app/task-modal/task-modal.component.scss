@@ -1,0 +1,17 @@
+.task-modal {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    .task-modal-content {
+        background: green;
+        margin: auto;
+        padding: 15px;
+        width: 60%;
+        height: 60%;
+        margin-top: 10%;
+    }
+}

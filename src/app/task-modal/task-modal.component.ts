@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Task } from '../task';
-
 @Component({
   selector: 'app-task-modal',
   templateUrl: './task-modal.component.html',
@@ -9,8 +8,9 @@ import { Task } from '../task';
 })
 export class TaskModalComponent implements OnInit {
   @Output() added = new EventEmitter<Task>();
+  @Output() closed = new EventEmitter<boolean>();
 
-  private task: Task;
+  public task: Task;
 
   constructor() { }
 
@@ -20,6 +20,12 @@ export class TaskModalComponent implements OnInit {
 
   add() {
     this.added.emit(this.task);
+  }
+
+  close(event) {
+    if (event.srcElement.id == 'task-modal-wrapper') {
+      this.closed.emit(true);
+    }
   }
 
 }
