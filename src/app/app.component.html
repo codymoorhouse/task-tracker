@@ -7,14 +7,18 @@
 
 <div class="panel">
   <app-task-details *ngFor="let task of tasks"
-    [task]="task">
+    [task]="task"
+    (deleted)="deleteTask($event)">
   </app-task-details>
 
   <div class="divider"></div>
 
-  <div>
-    Total Estimate: ({{ getEstimateTotal() }} hrs)
-  </div>
+  <ul>
+    <li>Planned Tasks: {{ getTimeEstimate('planned') }} hrs</li>
+    <li>In Progress Tasks: {{ getTimeEstimate('in-progress') }} hrs</li>
+    <li>Completed Tasks: {{ getTimeEstimate('completed') }} hrs</li>
+    <li>Total Estimate: {{ getTimeEstimate('all') }} hrs</li>
+  </ul>
 </div>
 
 <router-outlet></router-outlet>

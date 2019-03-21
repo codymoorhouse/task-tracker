@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Task } from './task';
 
@@ -9,6 +9,7 @@ import { Task } from './task';
 })
 export class TaskDetailsComponent {
   @Input() task: Task;
+  @Output() deleted = new EventEmitter<number>();
 
   private _showTooltip = false;
 
@@ -18,6 +19,10 @@ export class TaskDetailsComponent {
 
   get availableStatuses(): String[] {
     return Task.statuses;
+  }
+
+  delete() {
+    this.deleted.emit(this.task.id);
   }
 
   getStatusLabel(status): String {

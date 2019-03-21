@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Task } from './task';
+import { TaskDetailsComponent } from './task-details.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,13 +20,25 @@ export class AppComponent {
     this.tasks = Task.tasks.map(task => task.clone());
   }
 
-  getEstimateTotal() {
-    return this.tasks.reduce((acc, task) => {
-      return acc + task.estimate;
-    }, 0);
+  getTimeEstimate(status: string) {
+    if (status == 'all') {
+      return this.tasks.reduce((acc, task) => acc + task.estimate, 0);
+    } else if (Task.statuses.includes(status)) {
+      return this.tasks.reduce((acc, task) => task.status == status ? acc + task.estimate : acc, 0);
+    }
+    return 0;
   }
 
-  removeTask(idx) {
+  deleteTask(taskId: number) {
+    /* Remove Element */
+    let idx = this.tasks.findIndex(t => t.id == taskId);
     this.tasks.splice(idx, 1);
+
+    /* Reorder tasks */
+    this.updateTaskIds();
+  }
+
+  updateTaskIds() {
+    this.tasks.forEach((t, idx) => t.id = idx + 1); 
   }
 }
