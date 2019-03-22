@@ -2,9 +2,6 @@
 <div style="text-align:center">
     <h1>
       {{ title }}
-      <a href="https://github.com/codymoorhouse">
-        <img width="32px" height="32px" src="/assets/GitHub-Mark-32px.png">
-      </a> 
     </h1>
   <div>
     (Hover over a task to view the description)
@@ -66,8 +63,14 @@
   </div>
 
   <app-task-modal *ngIf="showModal" (added)="addTask($event)" (closed)="showModal = false">
-
   </app-task-modal>
+
+</div>
+
+<div class="footer">
+    <a href="https://github.com/codymoorhouse">
+      <img width="60px" height="50px" src="https://github.githubassets.com/images/modules/logos_page/Octocat.png">
+    </a>
 </div>
 
 <router-outlet></router-outlet>
