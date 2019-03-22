@@ -1,0 +1,25 @@
+{
+    "tasks": [
+        {
+            "id": 1,
+            "name": "Take out the trash",
+            "description": "Collect the trash from the garbage cans around the house and take outside",
+            "estimate": 1.5,
+            "status": "planned"
+        },
+        {
+            "id": 2,
+            "title": "Clean the dishes",
+            "description": "Wipe and wash each dish in the sink and put back in the cupboards.",
+            "estimate": 2.3,
+            "status": "completed"
+        },
+        {
+            "id": 3,
+            "title": "Pay the bills",
+            "description": "Get the mail from the mailbox and log in online to pay the bills",
+            "estimate": 2,
+            "status": "in-progress"
+        }
+    ]
+}
