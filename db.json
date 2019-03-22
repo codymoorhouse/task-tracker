@@ -10,7 +10,7 @@
         {
             "id": 2,
             "name": "Clean the dishes",
-            "description": "Wipe and wash each dish in the sink and put back in the cupboards.",
+            "description": "Wipe and wash each dish in the sink and put back in the cupboards",
             "estimate": 2.3,
             "status": "completed"
         },
@@ -20,6 +20,20 @@
             "description": "Get the mail from the mailbox and log in online to pay the bills",
             "estimate": 2,
             "status": "in-progress"
+        },
+        {
+            "id": 4,
+            "name": "Update banking information",
+            "description": "Call the bank and update banking information",
+            "estimate": 1.2,
+            "status": "in-progress"
+        },
+        {
+            "id": 5,
+            "name": "Order food",
+            "description": "Order food for the whole family, including pizza",
+            "estimate": 1.5,
+            "status": "planned"
         }
     ]
 }
