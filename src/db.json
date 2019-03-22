@@ -9,14 +9,14 @@
         },
         {
             "id": 2,
-            "title": "Clean the dishes",
+            "name": "Clean the dishes",
             "description": "Wipe and wash each dish in the sink and put back in the cupboards.",
             "estimate": 2.3,
             "status": "completed"
         },
         {
             "id": 3,
-            "title": "Pay the bills",
+            "name": "Pay the bills",
             "description": "Get the mail from the mailbox and log in online to pay the bills",
             "estimate": 2,
             "status": "in-progress"
