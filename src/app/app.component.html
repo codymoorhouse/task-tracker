@@ -15,9 +15,11 @@
     </button>
   </div>
 
-  <app-task-details *ngFor="let task of tasks"
+  <app-task-details *ngFor="let task of tasks; let tIdx = index"
     [task]="task"
-    (deleted)="deleteTask($event)">
+    [order]="tIdx + 1"
+    (deleted)="deleteTask($event)"
+    (updated)="updateTask($event)">
   </app-task-details>
 
   <div class="divider"></div>

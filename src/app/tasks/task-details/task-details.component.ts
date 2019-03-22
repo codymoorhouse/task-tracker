@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { Task } from '../task';
+import { Task, TaskStatuses, TaskStatusLabels } from '../task';
 
 @Component({
   selector: 'app-task-details',
@@ -9,7 +9,9 @@ import { Task } from '../task';
 })
 export class TaskDetailsComponent {
   @Input() task: Task;
+  @Input() order: number;
   @Output() deleted = new EventEmitter<number>();
+  @Output() updated = new EventEmitter<Task>();
 
   private _showTooltip = false;
 
@@ -18,7 +20,7 @@ export class TaskDetailsComponent {
   }
 
   get availableStatuses(): String[] {
-    return Task.statuses;
+    return TaskStatuses;
   }
 
   delete() {
@@ -26,12 +28,11 @@ export class TaskDetailsComponent {
   }
 
   getStatusLabel(status): String {
-    return Task.getStatusLabel(status);
+    return TaskStatusLabels[status] || 'N/A';
   }
 
   updateTaskStatus(event) {
-    this.task.status = event.target.value;
-    alert('TODO: PATCH TO SERVER');
+    this.updated.emit(this.task);
   }
 
   mouseEnter(event) {

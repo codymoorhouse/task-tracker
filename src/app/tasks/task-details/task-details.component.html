@@ -2,12 +2,12 @@
     <div class="task-group">
         <div class="task-control">
             <div class="task-info" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)">
-                {{ task.id }}) {{ task.name }} ({{ task.estimate }} hrs)
+                {{ order }}) {{ task.name }} ({{ task.estimate }} hrs)
             </div>
         </div>
 
         <div class="task-statuses">
-            <select class="task-status" name="status" [ngModel]="task.status" (change)="updateTaskStatus($event)">
+            <select class="task-status" name="status" [(ngModel)]="task.status" (change)="updateTaskStatus($event)">
                 <option disabled>
                     Select...
                 </option>

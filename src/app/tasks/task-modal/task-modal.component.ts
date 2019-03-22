@@ -29,8 +29,14 @@ export class TaskModalComponent implements OnInit {
 
   add() {
     if (this.isValidTask()) {
-      alert('TODO: POST TO SERVER');
-      this.added.emit(new Task(this.name, this.description, this.estimate));
+      const newTask: Task = {
+        name:         this.name,
+        description:  this.description,
+        estimate:     this.estimate,
+        status:       'planned'
+      } as Task;
+
+      this.added.emit(newTask);
       this.closed.emit(true);
     } else {
       this.setErrors();
